@@ -1,0 +1,14 @@
+<section class="products-container">
+  <h1>Our Products</h1>
+  
+  <div class="products-grid">
+    <div *ngFor="let product of products" class="product-card">
+      <img [src]="product.image" [alt]="product.name">
+      <div class="product-info">
+        <h3>{{product.name}}</h3>
+        <p>{{product.description}}</p>
+        <button class="inquiry-btn">Inquiry</button>
+      </div>
+    </div>
+  </div>
+</section>

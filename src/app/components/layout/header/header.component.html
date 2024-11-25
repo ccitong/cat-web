@@ -1,0 +1,26 @@
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <img 
+          src="assets/images/logo/logo.png" 
+          alt="China Ace Technology"
+        >
+      </a>
+    </div>
+    
+    <nav [class.active]="isMenuOpen">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="mobile-menu" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,118 @@
+footer {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 3rem 0 0 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-section p, .footer-section li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-row, .email-row {
+  display: flex;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.contact-row i, .email-row i {
+  flex-shrink: 0;
+  width: 16px;
+  margin-top: 4px;
+  margin-right: 8px;
+  color: #fff;
+}
+
+.contact-text, .email-text {
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.contact-text strong, .email-text strong {
+  color: #fff;
+  display: inline-block;
+  margin-right: 0.3rem;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .contact-row, .email-row {
+    justify-content: center;
+  }
+}
+
+.office-info, .email-info {
+  color: #ccc;
+}
+
+.office-info p, .email-info p {
+  margin: 0 0 1.2rem 0;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.office-info strong, .email-info strong {
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}

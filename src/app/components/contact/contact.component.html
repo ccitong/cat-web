@@ -1,46 +1,67 @@
 <section class="contact-container">
-  <h1>Contact Us</h1>
+  <h1>Get in Touch</h1>
   
   <div class="contact-content">
     <div class="contact-info">
-      <h3>Get in Touch</h3>
+      <h3></h3>
       <p>
-        <strong>Address:</strong> Your address here<br>
-        <strong>Phone:</strong> Your phone number<br>
-        <strong>Email:</strong> your@email.com
+        <strong>Address:</strong>
+        <br>
+        3/F, S.F. Centre, 182 Queen's Road East,
+        Wan Chai, Hong Kong
+        <br>
+        <strong>Phone:</strong> (852) 2789 1660<br>
+        <strong>Email:</strong> info@chinaacetech.com
       </p>
     </div>
 
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
       <div class="form-group">
-        <input type="text" formControlName="name" placeholder="Your Name">
-        <div class="error-message" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
-          Name is required
-        </div>
+        <input 
+          type="text" 
+          formControlName="name" 
+          placeholder="Your Name"
+          [class.invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+        >
       </div>
       
       <div class="form-group">
-        <input type="email" formControlName="email" placeholder="Your Email">
-        <div class="error-message" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
-          Please enter a valid email
-        </div>
+        <input 
+          type="email" 
+          formControlName="email" 
+          placeholder="Your Email"
+          [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+        >
       </div>
       
       <div class="form-group">
-        <input type="text" formControlName="subject" placeholder="Subject">
-        <div class="error-message" *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid">
-          Subject is required
-        </div>
+        <input 
+          type="text" 
+          formControlName="subject" 
+          placeholder="Subject"
+          [class.invalid]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched"
+        >
       </div>
       
       <div class="form-group">
-        <textarea formControlName="message" placeholder="Your Message" rows="5"></textarea>
-        <div class="error-message" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
-          Message is required
-        </div>
+        <textarea 
+          formControlName="message" 
+          placeholder="Your Message"
+          [class.invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+        ></textarea>
       </div>
       
-      <button type="submit" [disabled]="!contactForm.valid">Send Message</button>
+      <div class="submit-section">
+        <button 
+          type="submit" 
+          [disabled]="!contactForm.valid || isSubmitting"
+        >
+          {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+        </button>
+        <div class="submit-message" *ngIf="submitMessage">
+          {{ submitMessage }}
+        </div>
+      </div>
     </form>
   </div>
 </section>
